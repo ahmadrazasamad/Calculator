@@ -64,13 +64,13 @@ function toggleSign() { // 5 cases in here
             return;
         }
 
-        if (isPositive(operands[0])) // 2. if the operand was positive
+        if (isPositive(operands[0]) || operands[0] === "0.") // 2. if the operand was positive, or 0.
             operands[0] = `-${operands[0]}`;
         else
             operands[0] = `${operands[0].slice(1)}`; // 3. if the operand was already negative, then removing the prefix minus sign
         renderDOM();
     } else if (!isNaN(screenTxtLastChar) || screenTxtLastChar === '.') { // 4. or the last character on the screen panel is an operand (i.e., 22+4 -> 22+-4 || 22-4 -> 22--4)
-        if (isPositive(operands[operands.length - 1])) // if the last operand starts with a minus
+        if (isPositive(operands[operands.length - 1]) || operands[operands.length - 1] === "0.") // if the last operand starts with a minus
             operands[operands.length - 1] = `-${operands[operands.length - 1]}`;
         else
             operands[operands.length - 1] = `${operands[operands.length - 1].slice(1)}`;
