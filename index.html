@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" size="16x16" typ="img/svg" href="./images/calculator (+-)_16x16.svg" />
+    <link rel="icon" size="32x32" typ="img/svg" href="./images/calculator (+-)_32x32.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div id="parent-container">
+        <div id="child-container">
+            <div id="screen-container">
+                <span id="scroll-inner">
+                    <div id="content-wrapper">
+                        <p id="equation-that-is-solved"></p>
+                        <p id="screen">0</p>
+                    </div>
+                </span>
+            </div>
+
+            <div id="btn-container">
+                <div>
+                    <button onkeydown="event.preventDefault()" onclick="clearAll()" class="delete">C</button>
+                    <button onkeydown="event.preventDefault()" onclick="deleteOneChar()" class="delete">
+                        <i class=" bi bi-backspace"></i>
+                    </button>
+                    <button onkeydown="event.preventDefault()" onclick="toggleSign()" id="toggle-sign">+/-</button>
+                    <button onkeydown="event.preventDefault()" onclick="setOperator('÷')" class="operator">÷</button>
+                </div>
+
+                <div>
+                    <button onkeydown="event.preventDefault()" onclick="num('7')">7</button>
+                    <button onkeydown="event.preventDefault()" onclick="num('8')">8</button>
+                    <button onkeydown="event.preventDefault()" onclick="num('9')">9</button>
+                    <button onkeydown="event.preventDefault()" onclick="setOperator('x')" class="operator">×</button>
+                </div>
+
+                <div>
+                    <button onkeydown="event.preventDefault()" onclick="num('4')">4</button>
+                    <button onkeydown="event.preventDefault()" onclick="num('5')">5</button>
+                    <button onkeydown="event.preventDefault()" onclick="num('6')">6</button>
+                    <button onkeydown="event.preventDefault()" onclick="setOperator('-')" class="operator">-</button>
+                </div>
+
+                <div>
+                    <button onkeydown="event.preventDefault()" onclick="num('1')">1</button>
+                    <button onkeydown="event.preventDefault()" onclick="num('2')">2</button>
+                    <button onkeydown="event.preventDefault()" onclick="num('3')">3</button>
+                    <button onkeydown="event.preventDefault()" onclick="setOperator('+')" class="operator">+</button>
+                </div>
+
+                <div>
+                    <button onkeydown="event.preventDefault()" onclick="num('0')">0</button>
+                    <button onkeydown="event.preventDefault()" onclick="addDecimalPoint()">.</button>
+                    <button onkeydown="event.preventDefault()" onclick="calculate()" id="calculate">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

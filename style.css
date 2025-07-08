@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+}
+
+#parent-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#child-container {
+    width: 25%;
+    height: 85%;
+    background-color: #1e1e1e;
+    padding: 1.5%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#screen-container {
+    background-color: #121212;
+    letter-spacing: 1px;
+    color: #cfcfcf;
+    text-align: right;
+    border-radius: 10px;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 3px;
+}
+
+#screen-container>span {
+    padding: 5%;
+    margin: 5px 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* custom scrollbar */
+#screen-container>span::-webkit-scrollbar {
+    height: 6px;
+}
+
+#screen-container>span::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 3px;
+}
+
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: fit-content;
+    min-width: 100%;
+}
+
+#equation-that-is-solved {
+    font-size: 1.5rem;
+    opacity: 0.6;
+    white-space: nowrap;
+}
+
+#screen {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+}
+
+#btn-container {
+    width: 100%;
+    height: 70%;
+    /* height of the child container is 85% of the parent (parent's height is 100vh), child container is the parent of screen container and btn container, screen container gets 25% of the child container and 75% of the child container, but 5% margin is given to the top, so 75% - 5% = 70% */
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#btn-container>div {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+button {
+    width: 22.75%;
+    height: 92.75%;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.75rem;
+    color: white;
+    background-color: #2c2c2c;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(44, 44, 44, 0.5);
+}
+
+button:active {
+    background-color: rgba(44, 44, 44, 0.75);
+}
+
+.delete {
+    background-color: #858585;
+}
+
+.delete:hover {
+    background-color: rgba(133, 133, 133, 0.5);
+}
+
+.delete:active {
+    background-color: rgba(133, 133, 133, 0.75);
+}
+
+#toggle-sign {
+    color: #ff7f2a;
+}
+
+.operator {
+    color: #ff7f2a;
+    background-color: #563621;
+}
+
+.operator:hover {
+    background-color: rgb(86, 54, 33, 0.75);
+}
+
+.operator:active {
+    background-color: rgb(86, 54, 33, 1);
+}
+
+#calculate {
+    background-color: #ff7f2a;
+    font-weight: bold;
+    width: 48.75%;
+}
+
+#calculate:hover {
+    background-color: rgba(255, 127, 42, 0.75);
+}
+
+#calculate:active {
+    background-color: rgba(255, 127, 42, 1);
+}
